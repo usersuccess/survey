@@ -1,0 +1,10 @@
+{layout name="layout" /}
+<div class="panel panel-default">
+                <div class="panel panel-body">
+                    <form action="{:url('evaluate/edit_post',['id'=>$data->id])}" method="post">
+                        <h3>修改评测项目:</h3>
+                        <input type="text" name="content" class="form-control" value="{$data->content}" style="width: 500px" required><br>
+                        <input type="submit" name="submit" value="保存" class="btn btn-success">
+                    </form>
+                </div>
+            </div>

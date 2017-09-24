@@ -1,0 +1,15 @@
+{layout name="layout" /}
+<div class="panel panel-default">
+    <div class="panel panel-body">
+        <table class="table">
+            <tr class="row">
+                <td>建议</td><td>其他</td>
+            </tr>
+            {volist name="mark" id="v" }
+            <tr class="row">
+                <td>{$v['description']}</td><td>{$v['others']}</td>
+                {/volist}
+            </tr>
+        </table>
+    </div>
+</div>

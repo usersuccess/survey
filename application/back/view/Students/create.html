@@ -1,0 +1,28 @@
+{layout name="layout" /}
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form action="{:url('students/save')}" method="post">
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">学号</label>
+                <input type="text" name="student_num" class="form-control">
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">姓名</label>
+                <input type="text" name="student_name" class="form-control">
+            </div>
+            <input type="hidden" name="pwd" value="123">
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">班级</label>
+                <select name="class_id">
+                    {volist name='class' id='v'}
+                    <option value="{$v['id']}">{$v['class_name']}</option>
+                    {/volist}
+                </select>
+            </div>
+            <div class="control-group">
+                <input type="submit" value="添加数据" class="btn btn-default btn-sm" >
+            </div>
+        </form>
+    </div>
+</div>
+

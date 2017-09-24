@@ -1,0 +1,22 @@
+<!DO{layout name="layout" /}
+            <div class="panel panel-default">
+                <div class="panel panel-body">
+                    <table class="table">
+                        <tr class="row">
+                            <td>班级</td><td>老师</td><td></td>
+                        </tr>
+                        {volist name="class" id="v" }
+                        <form action="{:url('evaluate/data_show',['id'=>$v['id']])}" method="post">
+                            <tr class="row">
+                                <td>{$v['class_name']}</td>
+                                <td><select name="teacher">
+                                {volist name="data[$v['id']]" id="t" }
+                                <option value="{$key}">{$t}</option>
+                                {/volist}
+                            </select></td><td><input class="btn btn-default btn-sm" type="submit" name="submit" value="查看评测数据"></td>
+                            </tr>
+                        </form>
+                        {/volist}
+                    </table>
+                </div>
+            </div>

@@ -1,0 +1,45 @@
+{layout name="layout" /}
+<div style="margin: 10px 20px;">
+<h3>老师评测管理表</h3>
+   <form action="{:url('index/save')}"method="post">
+    <table class="table">
+    <tr class="row">
+
+        <td>编号</td><td>名称</td><td>评价</td>
+    </tr>
+        {volist name="content" id="v"}
+        <tr class="row">
+        <td>{$arr[$v['id']]}</td><td>{$v['content']}</td>
+            <td>
+            <input type="radio"name="survey{$v['id']}"value=3>好
+            <input type="radio"name="survey{$v['id']}"value=2>良
+            <input type="radio"name="survey{$v['id']}"value=1>差
+            </td>
+        </tr>
+        {/volist}
+    </table>
+       <div class="row">
+           <div class="col-sm-6">
+       <lable class="control-label"><b>1:你认为这门课程还有那些需要改进的？</b></lable>
+       <textarea name="description"cols="80"rows="6"class="form-control"></textarea>
+               </div>
+           <div class="col-sm-6">
+               <lable class="control-label"><b>1:你认为自身还需要改进什么？</b></lable>
+               <textarea name="others"cols="80"rows="6"class="form-control"></textarea>
+           </div>
+       </div>
+       <b>评测老师:</b>
+       <select name="select">
+           {volist name="teacher" id="v"}
+           <option value="{$v['id']}">{$v['teacher_name']}</option>
+           {/volist}
+       </select>
+       <input type="submit"name="submit"value="提交"class="btn btn-success "style="margin-left: 800px;" onclick="return check();">
+
+       </form>
+</div>
+<!--<form action="{:url('index/add')}"method="post">
+    <input type="text"name="user"><br>
+    <input type="submit"name="submit"value="提交">
+</form>-->
+

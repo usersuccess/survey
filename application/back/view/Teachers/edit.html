@@ -1,0 +1,28 @@
+{layout name="layout" /}
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form action="{:url('teachers/update')}" method="post">
+            <input type="hidden" name="id" value="{$data['id']}">
+
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">姓名</label>
+                <input type="text" name="teacher_name" class="form-control" value="{$data['teacher_name']}">
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">班级</label>
+                <select name="class_id">
+                    {volist name='class' id='v'}
+                    {if condition="$v['id'] eq $data['class_id']"}
+                        <option value="{$v['id']}" selected>{$v['class_name']}</option>
+                    {else /}
+                    <option value="{$v['id']}">{$v['class_name']}</option>
+                    {/if}
+                    {/volist}
+                </select>
+            </div>
+            <div class="control-group">
+                <input type="submit" value="保存数据" class="btn btn-default btn-sm" >
+            </div>
+        </form>
+    </div>
+</div>

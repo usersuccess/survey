@@ -1,0 +1,16 @@
+{layout name="layout" /}
+            <div class="panel panel-default">
+                <div class="panel panel-body">
+                    <table class="table">
+                        <tr class="row">
+                            <td>项目</td><td>好</td><td>中</td><td>差</td>
+                        </tr>
+                        {volist name="record" id="v" }
+                        <tr class="row">
+                        <td>{$content[$key]}</td><td>{php}echo substr_count($v,3){/php}</td><td>{php}echo substr_count($v,2){/php}</td><td>{php}echo substr_count($v,1){/php}</td>
+                        {/volist}
+                        </tr>
+                        <a href="{:url('evaluate/read')}" class="btn btn-default">查看学生评价</a>
+                    </table>
+                </div>
+            </div>

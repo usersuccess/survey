@@ -1,0 +1,18 @@
+{layout name="layout" /}
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table">
+            <tr class="row">
+                <td>工号</td><td>姓名</td><td>班级</td><td>操作</td>
+            </tr>
+            {volist name='teacher' id='v'}
+            <tr class="row">
+                <td>{$v->id}</td><td>{$v->teacher_name}</td><td>{$v->class_id}</td><td><a href="{:url('teachers/edit',['id'=>$v->id])}" class="btn btn-default btn-xs" >修改</a> <a href="{:url('teachers/delete',['id'=>$v->id])}" class="btn btn-danger btn-xs" >删除</a></td>
+            </tr>
+            {/volist}
+        </table>
+        <div style="text-align: center">
+            {$teacher->render()}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{layout name="layout" /}
+
+            <div class="panel panel-default">
+                <div class="panel panel-body">
+                    <form action="" method="post">
+                        <a href="{:url('evaluate/add')}" class="btn btn-default">添加项目</a>
+                        <select name="class">
+                            {volist name="class" id="c"}
+                            <option value="{$c['id']}">{$c['class_name']}</option>
+                            {/volist}
+                        </select>
+                        <input type="submit" name="submit" onclick="javascript:this.form.action='{:url(\'evaluate/show\')}'" class="btn btn-success">
+                    <table class="table">
+                        <tr class="row">
+                            <td></td><td>项目</td><td>编辑</td>
+                        </tr>
+                        {volist name="data" id="v"}
+                        <tr class="row">
+                            <td><input type="checkbox" name="content[]" value="{$v['id']}"></td><td>{$v['content']}</td><td><a href="{:url('evaluate/edit',['id'=>$v['id']])}" class="btn btn-default btn-xs">修改</a><a href="{:url('evaluate/del',['id'=>$v['id']])}" class="btn btn-default btn-xs" onclick="return check()">删除</a></td>
+                        </tr>
+                        {/volist}
+                    </table>
+                        <input type="submit" name="submit" value="保存" class="btn btn-default " onclick="javascript:this.form.action='{:url(\'evaluate/save\')}'">
+                    </form>
+                </div>
+            </div>
+

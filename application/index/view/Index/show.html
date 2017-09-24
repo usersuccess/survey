@@ -1,0 +1,12 @@
+{layout name="layout" /}
+<table class="table table-border">
+    <tr class="row">
+
+        <td>名称</td><td>评价</td><td>总结</td><td>其他</td>
+    </tr>
+
+{volist name="data" id="v"}
+    <tr class="row">
+        <td>{$v['teacher_id']}</td><td>{$v['status']}</td><td>{$v['description']}</td><td>{$v['others']}</td>
+    </tr>
+{/volist}

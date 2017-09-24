@@ -1,0 +1,18 @@
+{layout name="layout" /}
+<div class="panel panel-default">
+                <div class="panel panel-body">
+                    班级:{$class['class_name']}&nbsp&nbsp;评测表
+                    <a href="{:url('evaluate/delete',['id'=>$class['id']])}" class="btn btn-success">删除评测表</a>
+                    <table class="table">
+                        <tr class="row">
+                            <td>项目</td>
+                        </tr>
+                        {volist name="content" id="v"}
+                        <tr class="row">
+                            <td>{$v['content']}</td>
+                        </tr>
+                        {/volist}
+                    </table>
+                    <a href="{:url('evaluate/start',['id'=>$class['id']])}" class="btn btn-success">开启评测</a><a href="{:url('evaluate/end',['id'=>$class['id']])}" class="btn btn-danger">关闭评测</a>
+                </div>
+            </div>
